@@ -27,19 +27,18 @@
             <button onclick="openPaymentWindow()">Buy Now</button> <!-- Buy Now Button -->
         </section>
         
-        <!-- Mock Payment Modal -->
-        <div id="payment-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closePaymentWindow()">&times;</span>
-                <h2>Order Summary</h2>
-                <ul id="payment-summary-list"></ul>
-                <p>Total Amount: $<span id="payment-total-amount">0.00</span></p>
-                <button onclick="confirmPurchase()">Confirm Purchase</button>
-                <button onclick="closePaymentWindow()">Cancel</button>
-            </div>
-        </div>
-    </main>
+  <!-- Mock Payment Modal -->
+<div id="payment-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePaymentWindow()">&times;</span>
+        <h2>Order Summary</h2>
+        <ul id="payment-summary-list"></ul>
+        <p>Total Amount: $<span id="payment-total-amount">0.00</span></p>
+        <button onclick="confirmPurchase()">Confirm Purchase</button>
+        <button onclick="closePaymentWindow()">Cancel</button>
+    </div>
+</div>
 
-    <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
-</html>
+
