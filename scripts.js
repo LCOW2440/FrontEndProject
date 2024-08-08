@@ -59,3 +59,41 @@ function emptyCart() {
     localStorage.removeItem('shoppingCart');
     displayCart();
 }
+// Open the payment window
+function openPaymentWindow() {
+    const paymentModal = document.getElementById('payment-modal');
+    const paymentSummaryList = document.getElementById('payment-summary-list');
+    const paymentTotalAmount = document.getElementById('payment-total-amount');
+
+    let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    paymentSummaryList.innerHTML = '';
+    let total = 0;
+
+    // Loop through each item in the cart and display it in the payment modal
+    shoppingCart.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        paymentSummaryList.appendChild(listItem);
+        total += item.price;
+    });
+
+    // Update the total amount in the payment modal
+    paymentTotalAmount.textContent = total.toFixed(2);
+
+    // Show the modal
+    paymentModal.style.display = 'flex';
+}
+
+// Close the payment window
+function closePaymentWindow() {
+    const paymentModal = document.getElementById('payment-modal');
+    paymentModal.style.display = 'none';
+}
+
+// Confirm purchase (mock)
+function confirmPurchase() {
+    alert('Purchase confirmed! Thank you for shopping.');
+    localStorage.removeItem('shoppingCart');
+    displayCart();
+    closePaymentWindow();
+}
